@@ -1,4 +1,4 @@
-load("@rules_python//python:defs.bzl", "py_library")
+load("@rules_python//python:defs.bzl", "py_binary", "py_library")
 
 # gazelle:python_generation_mode file
 
@@ -8,4 +8,10 @@ py_library(
     srcs = ["bar.py"],
     visibility = ["//visibility:private"],
 	tags = ["cant_touch_this"],
+)
+
+py_binary(
+    name = "bar_main",
+    srcs = ["bar_main.py"],
+    visibility = ["//:__subpackages__"],
 )
