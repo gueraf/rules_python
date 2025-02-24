@@ -1,0 +1,15 @@
+load("@rules_python//python:defs.bzl", "py_binary")
+
+# gazelle:python_generation_mode file
+
+py_binary(
+    name = "existing_main",
+    srcs = ["existing_main.py"],
+    visibility = ["//:__subpackages__"],
+)
+
+py_binary(
+    name = "added_main",
+    srcs = ["added_main.py"],
+    visibility = ["//:__subpackages__"],
+)
